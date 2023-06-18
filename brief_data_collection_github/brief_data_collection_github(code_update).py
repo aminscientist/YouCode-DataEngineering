@@ -103,4 +103,5 @@ end_time = time.time()
 execution_time = end_time - start_time
 
 # Print the execution time
-print(f"Execution time: {execution_time} seconds")
+print(f"Execution time: {execution_time} seconds") #Execution time: 1690.2388379573822 seconds
+

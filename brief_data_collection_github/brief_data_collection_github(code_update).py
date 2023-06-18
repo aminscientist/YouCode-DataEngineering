@@ -13,7 +13,7 @@ start_year = 2023
 end_year = 2013
 
 # API key
-api_key = "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"
+api_key = "Your API Key"
 
 # Initialize the PyGitHub object with the API key
 per_page = 100

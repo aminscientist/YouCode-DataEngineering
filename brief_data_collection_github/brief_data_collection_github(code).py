@@ -15,7 +15,7 @@ start_year = 2023
 end_year = 2013
 
 # API key
-api_key = "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"
+api_key = "Your API key"
 
 # Initialize the PyGitHub object with the API key
 g = Github(api_key)

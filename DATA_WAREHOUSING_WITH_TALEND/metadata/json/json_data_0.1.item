@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendJSON="http://www.talend.org/json" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendJSON:JSONFileConnection xmi:id="_IS5_ITzVEe65Y-lxtVMbnw" name="json_data" dataPackage="_IS5_NDzVEe65Y-lxtVMbnw" JSONFilePath="C:/Users/Youcode/Desktop/Data-dev/data-development/data_warehousing_with_talend/supermarket_sales.json" Encoding="UTF-8" readbyMode="JSONPATH">
+    <schema xmi:id="_IS5_IjzVEe65Y-lxtVMbnw" LimitBoucle="50" AbsoluteXPathQuery="$[*]">
+      <schemaTargets xmi:id="_IS5_IzzVEe65Y-lxtVMbnw" RelativeXPathQuery="Invoice_ID" TagName="Invoice_ID"/>
+      <schemaTargets xmi:id="_IS5_JDzVEe65Y-lxtVMbnw" RelativeXPathQuery="Branch" TagName="Branch"/>
+      <schemaTargets xmi:id="_IS5_JTzVEe65Y-lxtVMbnw" RelativeXPathQuery="City" TagName="City"/>
+      <schemaTargets xmi:id="_IS5_JjzVEe65Y-lxtVMbnw" RelativeXPathQuery="Customer_type" TagName="Customer_type"/>
+      <schemaTargets xmi:id="_IS5_JzzVEe65Y-lxtVMbnw" RelativeXPathQuery="Gender" TagName="Gender"/>
+      <schemaTargets xmi:id="_IS5_KDzVEe65Y-lxtVMbnw" RelativeXPathQuery="Product_line" TagName="Product_line"/>
+      <schemaTargets xmi:id="_IS5_KTzVEe65Y-lxtVMbnw" RelativeXPathQuery="Unit_price" TagName="Unit_price"/>
+      <schemaTargets xmi:id="_IS5_KjzVEe65Y-lxtVMbnw" RelativeXPathQuery="Quantity" TagName="Quantity"/>
+      <schemaTargets xmi:id="_IS5_KzzVEe65Y-lxtVMbnw" RelativeXPathQuery="Tax_5%" TagName="Tax_5_"/>
+      <schemaTargets xmi:id="_IS5_LDzVEe65Y-lxtVMbnw" RelativeXPathQuery="Total" TagName="Total"/>
+      <schemaTargets xmi:id="_IS5_LTzVEe65Y-lxtVMbnw" RelativeXPathQuery="Date" TagName="Date"/>
+      <schemaTargets xmi:id="_IS5_LjzVEe65Y-lxtVMbnw" RelativeXPathQuery="Time" TagName="Time"/>
+      <schemaTargets xmi:id="_IS5_LzzVEe65Y-lxtVMbnw" RelativeXPathQuery="Payment" TagName="Payment"/>
+      <schemaTargets xmi:id="_IS5_MDzVEe65Y-lxtVMbnw" RelativeXPathQuery="cogs" TagName="cogs"/>
+      <schemaTargets xmi:id="_IS5_MTzVEe65Y-lxtVMbnw" RelativeXPathQuery="gross_margin_percentage" TagName="gross_margin_percentage"/>
+      <schemaTargets xmi:id="_IS5_MjzVEe65Y-lxtVMbnw" RelativeXPathQuery="gross_income" TagName="gross_income"/>
+      <schemaTargets xmi:id="_IS5_MzzVEe65Y-lxtVMbnw" RelativeXPathQuery="Rating" TagName="Rating"/>
+    </schema>
+  </TalendJSON:JSONFileConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_IS5_NDzVEe65Y-lxtVMbnw" name="default" dataManager="_IS5_ITzVEe65Y-lxtVMbnw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_IS5_NTzVEe65Y-lxtVMbnw" id="_zK31cDzUEe65Y-lxtVMbnw" label="json_data">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_NjzVEe65Y-lxtVMbnw" label="Invoice_ID" length="100" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_NzzVEe65Y-lxtVMbnw" label="Branch" length="1" talendType="id_Character" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_ODzVEe65Y-lxtVMbnw" label="City" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_OTzVEe65Y-lxtVMbnw" label="Customer_type" length="6" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_OjzVEe65Y-lxtVMbnw" label="Gender" length="6" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_OzzVEe65Y-lxtVMbnw" label="Product_line" length="22" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_PDzVEe65Y-lxtVMbnw" label="Unit_price" length="5" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_PTzVEe65Y-lxtVMbnw" label="Quantity" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_PjzVEe65Y-lxtVMbnw" label="Tax_5_" length="7" precision="5" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_PzzVEe65Y-lxtVMbnw" label="Total" length="8" precision="5" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_QDzVEe65Y-lxtVMbnw" label="Date" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_QTzVEe65Y-lxtVMbnw" label="Time" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_QjzVEe65Y-lxtVMbnw" label="Payment" length="11" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_QzzVEe65Y-lxtVMbnw" label="cogs" length="6" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_RDzVEe65Y-lxtVMbnw" label="gross_margin_percentage" length="11" precision="10" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_RTzVEe65Y-lxtVMbnw" label="gross_income" length="7" precision="5" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IS5_RjzVEe65Y-lxtVMbnw" label="Rating" length="4" precision="3" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

@@ -1,0 +1,52 @@
+{
+	"name": "FactWeatherMetrics",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VilleFuturData",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "weathermetrics.csv",
+				"container": "villefuturdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "DateID",
+				"type": "String"
+			},
+			{
+				"name": "RegionID",
+				"type": "String"
+			},
+			{
+				"name": "AverageTemperature",
+				"type": "String"
+			},
+			{
+				"name": "Humidity",
+				"type": "String"
+			},
+			{
+				"name": "WindSpeed",
+				"type": "String"
+			},
+			{
+				"name": "Rainfall",
+				"type": "String"
+			},
+			{
+				"name": "SunshineHours",
+				"type": "String"
+			}
+		]
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"name": "DimRegion",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VilleFuturData",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "regiondim.csv",
+				"container": "villefuturdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "RegionID",
+				"type": "String"
+			},
+			{
+				"name": "RegionName",
+				"type": "String"
+			}
+		]
+	}
+}

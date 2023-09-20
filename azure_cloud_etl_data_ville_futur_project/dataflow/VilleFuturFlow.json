@@ -83,6 +83,7 @@
 				"          DateID as string,",
 				"          Date as string",
 				"     ),",
+				"     partitionFileNames:['DimDateCleaned.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> DimDateCleaned",
 				"DimRegion sink(allowSchemaDrift: true,",
@@ -91,6 +92,7 @@
 				"          RegionID as string,",
 				"          RegionName as string",
 				"     ),",
+				"     partitionFileNames:['DimRegionCleaned.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> DimRegionCleaned",
 				"source3 sink(allowSchemaDrift: true,",
@@ -104,6 +106,7 @@
 				"          Rainfall as string,",
 				"          SunshineHours as string",
 				"     ),",
+				"     partitionFileNames:['FactWeatherMetrics.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> FactWeatherMetrics"
 			]

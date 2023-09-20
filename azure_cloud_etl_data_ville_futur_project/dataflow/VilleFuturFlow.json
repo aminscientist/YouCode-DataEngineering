@@ -29,21 +29,21 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DimDate",
+						"referenceName": "Output",
 						"type": "DatasetReference"
 					},
 					"name": "DimDateCleaned"
 				},
 				{
 					"dataset": {
-						"referenceName": "DimRegion",
+						"referenceName": "Output",
 						"type": "DatasetReference"
 					},
 					"name": "DimRegionCleaned"
 				},
 				{
 					"dataset": {
-						"referenceName": "FactWeatherMetrics",
+						"referenceName": "Output",
 						"type": "DatasetReference"
 					},
 					"name": "FactWeatherMetrics"
@@ -79,33 +79,16 @@
 				"     ignoreNoFilesFound: false) ~> source3",
 				"DimDate sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          DateID as string,",
-				"          Date as string",
-				"     ),",
 				"     partitionFileNames:['DimDateCleaned.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> DimDateCleaned",
 				"DimRegion sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          RegionID as string,",
-				"          RegionName as string",
-				"     ),",
 				"     partitionFileNames:['DimRegionCleaned.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> DimRegionCleaned",
 				"source3 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          DateID as string,",
-				"          RegionID as string,",
-				"          AverageTemperature as string,",
-				"          Humidity as string,",
-				"          WindSpeed as string,",
-				"          Rainfall as string,",
-				"          SunshineHours as string",
-				"     ),",
 				"     partitionFileNames:['FactWeatherMetrics.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> FactWeatherMetrics"

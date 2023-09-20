@@ -16,7 +16,7 @@
 						"referenceName": "DimRegion",
 						"type": "DatasetReference"
 					},
-					"name": "DimRegionCleaned"
+					"name": "DimRegion"
 				},
 				{
 					"dataset": {
@@ -33,13 +33,27 @@
 						"type": "DatasetReference"
 					},
 					"name": "DimDateCleaned"
+				},
+				{
+					"dataset": {
+						"referenceName": "DimRegion",
+						"type": "DatasetReference"
+					},
+					"name": "DimRegionCleaned"
+				},
+				{
+					"dataset": {
+						"referenceName": "FactWeatherMetrics",
+						"type": "DatasetReference"
+					},
+					"name": "FactWeatherMetrics"
 				}
 			],
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
 				"          DateID as integer,",
-				"          Date as date",
+				"          Date as date 'yyyy-MM-dd'",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -50,7 +64,7 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> DimRegionCleaned",
+				"     ignoreNoFilesFound: false) ~> DimRegion",
 				"source(output(",
 				"          DateID as integer,",
 				"          RegionID as integer,",
@@ -70,7 +84,28 @@
 				"          Date as string",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> DimDateCleaned"
+				"     skipDuplicateMapOutputs: true) ~> DimDateCleaned",
+				"DimRegion sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          RegionID as string,",
+				"          RegionName as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> DimRegionCleaned",
+				"source3 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          DateID as string,",
+				"          RegionID as string,",
+				"          AverageTemperature as string,",
+				"          Humidity as string,",
+				"          WindSpeed as string,",
+				"          Rainfall as string,",
+				"          SunshineHours as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> FactWeatherMetrics"
 			]
 		}
 	}

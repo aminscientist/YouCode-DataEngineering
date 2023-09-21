@@ -29,21 +29,21 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DimDateCleaned",
+						"referenceName": "AzureSynapseAnalyticsDate",
 						"type": "DatasetReference"
 					},
 					"name": "DimDateCleaned"
 				},
 				{
 					"dataset": {
-						"referenceName": "DimRegionCleaned",
+						"referenceName": "AzureSynapseAnalyticsRegion",
 						"type": "DatasetReference"
 					},
 					"name": "DimRegionCleaned"
 				},
 				{
 					"dataset": {
-						"referenceName": "FactWeatherMetricsCleaned",
+						"referenceName": "AzureSynapseAnalyticsWeatherMetrics",
 						"type": "DatasetReference"
 					},
 					"name": "FactWeatherMetrics"

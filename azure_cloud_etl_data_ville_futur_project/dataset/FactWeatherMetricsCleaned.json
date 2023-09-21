@@ -1,0 +1,16 @@
+{
+	"name": "FactWeatherMetricsCleaned",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VilleFuturSynapse",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FactWeatherMetrics"
+		}
+	}
+}

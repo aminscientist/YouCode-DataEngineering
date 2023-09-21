@@ -16,12 +16,24 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DimDateCleaned",
+						"type": "DatasetReference"
+					},
 					"name": "DimDateCleaned"
 				},
 				{
+					"dataset": {
+						"referenceName": "DimRegionCleaned",
+						"type": "DatasetReference"
+					},
 					"name": "DimRegionCleaned"
 				},
 				{
+					"dataset": {
+						"referenceName": "FactWeatherMetricsCleaned",
+						"type": "DatasetReference"
+					},
 					"name": "FactWeatherMetrics"
 				}
 			],
@@ -52,19 +64,37 @@
 				"     validateSchema: false) ~> source3",
 				"DimDate sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['DimDateCleaned.csv'],",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     staged: true,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> DimDateCleaned",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> DimDateCleaned",
 				"DimRegion sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['DimRegionCleaned.csv'],",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     staged: true,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> DimRegionCleaned",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> DimRegionCleaned",
 				"source3 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['FactWeatherMetrics.csv'],",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     staged: true,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> FactWeatherMetrics"
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> FactWeatherMetrics"
 			]
 		}
 	}

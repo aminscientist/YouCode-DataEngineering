@@ -19,13 +19,6 @@
 						"referenceName": "VilleFuturFlow",
 						"type": "DataFlowReference"
 					},
-					"staging": {
-						"linkedService": {
-							"referenceName": "VilleFuturData",
-							"type": "LinkedServiceReference"
-						},
-						"folderPath": "villefutur"
-					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"

@@ -5,47 +5,23 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "DimDate",
-						"type": "DatasetReference"
-					},
 					"name": "DimDate"
 				},
 				{
-					"dataset": {
-						"referenceName": "DimRegion",
-						"type": "DatasetReference"
-					},
 					"name": "DimRegion"
 				},
 				{
-					"dataset": {
-						"referenceName": "FactWeatherMetrics",
-						"type": "DatasetReference"
-					},
 					"name": "source3"
 				}
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "Output",
-						"type": "DatasetReference"
-					},
 					"name": "DimDateCleaned"
 				},
 				{
-					"dataset": {
-						"referenceName": "Output",
-						"type": "DatasetReference"
-					},
 					"name": "DimRegionCleaned"
 				},
 				{
-					"dataset": {
-						"referenceName": "Output",
-						"type": "DatasetReference"
-					},
 					"name": "FactWeatherMetrics"
 				}
 			],
@@ -56,15 +32,13 @@
 				"          Date as date 'yyyy-MM-dd'",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> DimDate",
+				"     validateSchema: false) ~> DimDate",
 				"source(output(",
 				"          RegionID as integer,",
 				"          RegionName as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> DimRegion",
+				"     validateSchema: false) ~> DimRegion",
 				"source(output(",
 				"          DateID as integer,",
 				"          RegionID as integer,",
@@ -75,8 +49,7 @@
 				"          SunshineHours as integer",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source3",
+				"     validateSchema: false) ~> source3",
 				"DimDate sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['DimDateCleaned.csv'],",

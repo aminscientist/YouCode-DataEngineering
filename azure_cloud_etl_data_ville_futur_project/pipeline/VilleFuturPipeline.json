@@ -23,7 +23,8 @@
 						"linkedService": {
 							"referenceName": "AzureBlobStorage",
 							"type": "LinkedServiceReference"
-						}
+						},
+						"folderPath": "villefuturcontainer"
 					},
 					"compute": {
 						"coreCount": 8,

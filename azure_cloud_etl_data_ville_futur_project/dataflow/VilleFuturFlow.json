@@ -49,7 +49,11 @@
 					"name": "WeatherMetricsSink"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "alterRow1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          DateID as integer,",
@@ -77,6 +81,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> WeatherMetrics",
+				"Region alterRow(upsertIf(1 == 1)) ~> alterRow1",
 				"Date sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
@@ -89,7 +94,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError') ~> DateSink",
-				"Region sink(allowSchemaDrift: true,",
+				"alterRow1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
 				"     insertable:true,",

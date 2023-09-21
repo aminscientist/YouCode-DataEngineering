@@ -5,12 +5,24 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "DimDate",
+						"type": "DatasetReference"
+					},
 					"name": "DimDate"
 				},
 				{
+					"dataset": {
+						"referenceName": "DimRegion",
+						"type": "DatasetReference"
+					},
 					"name": "DimRegion"
 				},
 				{
+					"dataset": {
+						"referenceName": "FactWeatherMetrics",
+						"type": "DatasetReference"
+					},
 					"name": "source3"
 				}
 			],
@@ -44,13 +56,15 @@
 				"          Date as date 'yyyy-MM-dd'",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false) ~> DimDate",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> DimDate",
 				"source(output(",
 				"          RegionID as integer,",
 				"          RegionName as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false) ~> DimRegion",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> DimRegion",
 				"source(output(",
 				"          DateID as integer,",
 				"          RegionID as integer,",
@@ -61,7 +75,8 @@
 				"          SunshineHours as integer",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source3",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source3",
 				"DimDate sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
